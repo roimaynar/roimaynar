@@ -1,11 +1,11 @@
 :root{
   --bg:#051a05; --paper:#fdf2f6; --orange:#d2581f; --teal:#12ad8a; --navy:#0e0550; --ink:#050505; --red:#ff2d55;
   /* IMÁGENES: cambia aquí las rutas para sustituir cartas y fondo en toda la web */
-  --img-frame:url(assets/frame.png);   /* cara delantera de las cartas */
-  --img-back:url(assets/back.png);     /* reverso de las cartas */
-  --img-wizards:url(assets/wizards.png);
-  --img-cover:url(assets/cover.png);
-  --img-bg:url(assets/back.png);       /* fondo de toda la web */
+  --img-frame:url(assets/proyecto/frame.png);   /* cara delantera de las cartas */
+  --img-back:url(assets/proyecto/back.png);     /* reverso de las cartas */
+  --img-wizards:url(assets/proyecto/wizards.png);
+  --img-cover:url(assets/proyecto/cover.png);
+  --img-bg:url(assets/proyecto/back.png);       /* fondo de toda la web */
   --bg-size:420px; --bg-opacity:.16;   /* tamaño del dibujo de fondo y su intensidad (0 a 1) */
   --title:'Anton','Impact',sans-serif; --body:'Work Sans',system-ui,sans-serif;
 }
