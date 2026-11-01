@@ -15,8 +15,8 @@
 <nav><div class="wrap">
   <b><a href="#contacto">ROI MAYNAR NIETO</a></b>
   <ul>
-    <li><a href="#especialidades">Fields</a></li>
-    <li><a href="#trabajo">Works</a></li>
+    <li><a href="#especialidades">Specialties</a></li>
+    <li><a href="#trabajo">Work</a></li>
     <li><a href="#contacto">Contact</a></li>
   </ul>
 </div></nav>
@@ -25,7 +25,7 @@
   <iframe src="https://player.vimeo.com/video/1241983054?autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0&background=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Demo reel"></iframe>
   <div class="intro-text"><div class="wrap"><div class="intro-box">
     <h1>Roi<br>Maynar<br>Nieto</h1>
-    <ul class="roles"><li>CFX</li><li>FX</li><li>3D animation</li><li>Graphic design</li><li>Board games</li></ul>
+    <ul class="roles"><li>CFX</li><li>FX</li><li>3D animation</li><li>Graphic design</li></ul>
     <p>I have always been passionate about movement and visual storytelling. I specialize in 3D animation, VFX, and CFX, with a strong interest in node-based workflows, particularly in Houdini, Blender, and Nuke.</p>
     <a class="btn" href="#trabajo">View work</a><a class="btn" href="#contacto">Contact</a>
   </div></div></div>
@@ -33,8 +33,8 @@
 </section>
 
 <section id="especialidades"><div class="wrap">
-  <h2 class="sec-title">Fields of expertise</h2>
-  <p class="sec-sub">Click one to see the reel or portfolio.</p>
+  <h2 class="sec-title">Specialties</h2>
+  <p class="sec-sub">Five disciplines. Click one to see the reel or portfolio.</p>
   <div class="skills">
     <a class="skill" data-k="cfx" target="_blank" rel="noopener"><div class="wiz w-cfx"></div><h3>CFX</h3><p>Hair grooming and cloth simulation for characters.</p><span class="go">View reel →</span></a>
     <a class="skill" data-k="fx" target="_blank" rel="noopener"><div class="wiz w-fx"></div><h3>FX</h3><p>Fire, water, smoke, destruction and magic.</p><span class="go">View reel →</span></a>
@@ -45,7 +45,7 @@
 </div></section>
 
 <section id="trabajo"><div class="wrap">
-  <h2 class="sec-title">Works</h2>
+  <h2 class="sec-title">Work</h2>
   <p class="sec-sub">Click a card to flip it, then press “See more” to enter the project.</p>
   <div class="filters" id="filters" role="group" aria-label="Filter by category"></div>
   <div class="grid" id="grid"></div>
@@ -53,14 +53,13 @@
 
 <section id="contacto"><div class="wrap contact">
   <h2 class="sec-title">Contact</h2>
-  <p class="sec-sub" style="margin-inline:auto">Got a project? Write me.</p>
+  <p class="sec-sub" style="margin-inline:auto">Got a project? Write to me.</p>
   <div class="links">
     <!-- EDITA AQUÍ: tus enlaces -->
     <a class="btn" href="mailto:tu@email.com">Email</a>
-    <a class="btn" href="https://www.linkedin.com/in/roi-maynar/">LinkedIn</a>
-    <a class="btn" href="https://www.artstation.com/roimaynar">Artstation</a>
-    <a class="btn" href="https://www.instagram.com/el_conceptista/">Instagram</a>
-    <a class="btn" href="https://www.youtube.com/@el_conceptista">Youtube</a>
+    <a class="btn" href="https://www.linkedin.com/in/tuusuario">LinkedIn</a>
+    <a class="btn" href="https://vimeo.com/1241983054">Demo reel</a>
+    <a class="btn" href="https://www.instagram.com/tuusuario">Instagram</a>
   </div>
 </div></section>
 
@@ -68,25 +67,27 @@
 
 <script src="projects.js"></script>
 <script>
+const cats=p=>[].concat(p.c), first=p=>cats(p)[0]; // c puede ser "cfx" o ["cfx","fx"]
+const catNames=p=>cats(p).map(k=>CATS[k]).join(' · ');
 const grid=document.getElementById('grid'),fl=document.getElementById('filters');
 grid.innerHTML=P.map(p=>{
   const art=p.img?`<div class="art" style="background-image:url('${esc(p.img)}')"></div>`
-    :`<div class="art"><div class="plate"><div class="wiz w-${p.c==='juegos'?'cfx':p.c}"></div></div></div>`;
-  return `<div class="card" data-c="${p.c}" role="button" tabindex="0" aria-label="${esc(p.t)}: flip card">
+    :`<div class="art"><div class="plate"><div class="wiz w-${first(p)==='juegos'?'cfx':first(p)}"></div></div></div>`;
+  return `<div class="card" data-c="${cats(p).join(' ')}" role="button" tabindex="0" aria-label="${esc(p.t)}: flip card">
     <div class="inner">
       <div class="face front"${p.frame?` style="background-image:url('${esc(p.frame)}')"`:''}>${art}<div class="hint"><img src="assets/giro.png" alt=""></div>
-        <div class="label"><h3>${esc(p.t)}</h3><span class="c-${p.c}">${CATS[p.c]} · ${p.y}</span></div></div>
+        <div class="label"><h3>${esc(p.t)}</h3><span class="c-${first(p)}">${catNames(p)} · ${p.y}</span></div></div>
       <div class="face back"${p.back?` style="background-image:url('${esc(p.back)}')"`:''}><div class="detail"><p>${esc(p.d)}</p><a href="proyecto.html?id=${encodeURIComponent(p.id)}">See more</a></div></div>
     </div></div>`;
 }).join('');
 grid.addEventListener('click',e=>{if(e.target.closest('a'))return;const c=e.target.closest('.card');if(c)c.classList.toggle('flip')});
 grid.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.classList.contains('card')){e.preventDefault();e.target.classList.toggle('flip')}});
-const used=['todo',...new Set(P.map(p=>p.c))];
+const used=['todo',...new Set(P.flatMap(cats))];
 fl.innerHTML=used.map(k=>`<button class="chip" data-k="${k}" aria-pressed="${k==='todo'}">${k==='todo'?'All':CATS[k]}</button>`).join('');
 fl.addEventListener('click',e=>{
   const b=e.target.closest('.chip');if(!b)return;
   fl.querySelectorAll('.chip').forEach(x=>x.setAttribute('aria-pressed',x===b));
-  grid.querySelectorAll('.card').forEach(c=>c.classList.toggle('hide',b.dataset.k!=='todo'&&c.dataset.c!==b.dataset.k));
+  grid.querySelectorAll('.card').forEach(c=>c.classList.toggle('hide',b.dataset.k!=='todo'&&!c.dataset.c.split(' ').includes(b.dataset.k)));
 });
 document.querySelectorAll('.skill[data-k]').forEach(a=>{a.href=LINKS[a.dataset.k]||'#'});
 document.getElementById('yr').textContent=new Date().getFullYear();
