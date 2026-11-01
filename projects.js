@@ -60,16 +60,6 @@ const P=[
   intro:"A coherent graphic system from start to finish.",
   text:["Describe the client or project and the design goals.","Explain the decisions on color, typography and composition."],
   gallery:[],vimeo:""},
- {id:"cartas-sabotaje",t:"Sabotage cards",c:"juegos",y:2026,
-  d:"Card design, iconography and mechanics.",tools:"Illustration · Design",img:"assets/frame.png",
-  intro:"The cards of a game where cheating is part of the rules.",
-  text:["Explain what the game is about and the role of these cards.","Describe the process: mechanics, illustration, iconography and playtesting."],
-  gallery:[{src:"assets/frame.png",cap:"Sabotage card frame"},{src:"assets/back.png",cap:"Card back"}],vimeo:""},
- {id:"manual-juego",t:"Game manual",c:"juegos",y:2026,
-  d:"Manual layout and cover.",tools:"InDesign · Photoshop",img:"assets/cover.png",
-  intro:"From the first paper prototype to a print-ready manual.",
-  text:["Describe how the manual is organized and what you wanted a new player to understand.","Describe the cover design and the print layout."],
-  gallery:[{src:"assets/cover.png",cap:"Manual cover"}],vimeo:""}
 ];
 
 const esc=s=>String(s).replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
