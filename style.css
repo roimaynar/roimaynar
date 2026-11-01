@@ -76,14 +76,14 @@ section{padding:60px 0}
 .face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;background-size:100% 100%;border-radius:3%;box-shadow:0 12px 30px rgba(0,0,0,.55)}
 .front{background-image:var(--img-frame)}
 .back{background-image:var(--img-back);transform:rotateY(180deg)}
-.art{position:absolute;left:var(--art-left);top:var(--art-top);width:var(--art-w);height:var(--art-h);border-radius:50%;overflow:hidden;display:grid;place-items:center;background:#051a05 center/cover}
+.art{position:absolute;left:var(--art-left);top:var(--art-top);width:var(--art-w);height:var(--art-h);border-radius:50%;overflow:hidden;display:grid;place-items:center;background:center/cover no-repeat}
 .plate{width:92%;aspect-ratio:1;border-radius:50%;background:var(--paper);display:grid;place-items:center}
 .plate .wiz{width:86%}
-.label{position:absolute;left:4%;top:78.2%;width:92%;height:19.5%;color:var(--ink);padding:2.2cqw 3cqw;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:1cqw}
+.label{position:absolute;left:4%;top:78.2%;width:92%;height:19.5%;color:var(--paper);padding:2.2cqw 3cqw;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:1cqw}
 .label h3{font-size:6.8cqw;line-height:1.05}
 .label span{font-weight:600;font-size:4.2cqw;text-transform:uppercase;letter-spacing:.08em}
-.label .c-cfx{color:#111}.label .c-fx{color:var(--navy)}.label .c-3d{color:var(--orange)}.label .c-diseno{color:var(--teal)}.label .c-juegos{color:var(--red)}
-.hint{position:absolute;left:50%;top:2.5%;width:13cqw;height:13cqw;transform:translateX(-50%);filter:drop-shadow(0 .6cqw 1cqw rgba(0,0,0,.7))}
+.label span{color:var(--accent,var(--orange))}
+.hint{position:absolute;right:5%;top:3%;width:13cqw;height:13cqw;filter:drop-shadow(0 .6cqw 1cqw rgba(0,0,0,.7))}
 .hint img{width:100%;height:100%;object-fit:contain;display:block}
 .detail{position:absolute;left:23%;right:23%;top:31%;bottom:31%;display:flex;flex-direction:column;justify-content:center;gap:5cqw;text-align:center;font-size:5cqw;line-height:1.4}
 .detail a{align-self:center;background:var(--paper);color:var(--ink);padding:2.2cqw 6cqw;font:7.5cqw var(--title);letter-spacing:.05em;text-decoration:none;text-transform:uppercase;border:.8cqw solid var(--orange);box-shadow:1.2cqw 1.2cqw 0 var(--teal)}
