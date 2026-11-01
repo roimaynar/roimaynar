@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Proyecto · Roi Maynar</title>
+<title>Project · Roi Maynar Nieto</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Germania+One&family=Lusitana:wght@400;700&display=swap" rel="stylesheet">
@@ -12,16 +12,16 @@
 <body>
 
 <nav><div class="wrap">
-  <b><a href="index.html#contacto" style="text-decoration:none">ROI MAYNAR</a></b>
+  <b><a href="index.html#contacto" style="text-decoration:none">ROI MAYNAR NIETO</a></b>
   <ul>
-    <li><a href="index.html#trabajo">Trabajo</a></li>
-    <li><a href="index.html#contacto">Contacto</a></li>
+    <li><a href="index.html#trabajo">Work</a></li>
+    <li><a href="index.html#contacto">Contact</a></li>
   </ul>
 </div></nav>
 
 <main class="wrap proj" id="proj"></main>
 
-<footer><div class="wrap">© <span id="yr"></span> Roi Maynar</div></footer>
+<footer><div class="wrap">© <span id="yr"></span> Roi Maynar Nieto</div></footer>
 
 <script src="projects.js"></script>
 <script>
@@ -29,15 +29,15 @@ const id=new URLSearchParams(location.search).get('id');
 const i=P.findIndex(p=>p.id===id), p=P[i], root=document.getElementById('proj');
 document.getElementById('yr').textContent=new Date().getFullYear();
 if(!p){
-  root.innerHTML='<a class="back-link" href="index.html#trabajo">← Volver al trabajo</a><h1>No encontrado</h1><p>Este proyecto no existe.</p>';
+  root.innerHTML='<a class="back-link" href="index.html#trabajo">← Back to work</a><h1>Not found</h1><p>This project does not exist.</p>';
 }else{
-  document.title=p.t+' · Roi Maynar';
+  document.title=p.t+' · Roi Maynar Nieto';
   const prev=P[(i-1+P.length)%P.length], next=P[(i+1)%P.length];
   const gal=p.gallery&&p.gallery.length
     ? p.gallery.map(g=>`<figure><img src="${esc(g.src)}" alt="${esc(g.cap||p.t)}" loading="lazy">${g.cap?`<figcaption>${esc(g.cap)}</figcaption>`:''}</figure>`).join('')
-    : [1,2].map(()=>`<figure><div class="ph"><div class="plate"><div class="wiz w-${p.c==='juegos'?'cfx':p.c}"></div></div></div><figcaption>Añade aquí tus imágenes (campo gallery en projects.js)</figcaption></figure>`).join('');
+    : [1,2].map(()=>`<figure><div class="ph"><div class="plate"><div class="wiz w-${p.c==='juegos'?'cfx':p.c}"></div></div></div><figcaption>Add your images here (gallery field in projects.js)</figcaption></figure>`).join('');
   root.innerHTML=`
-    <a class="back-link" href="index.html#trabajo">← Volver al trabajo</a>
+    <a class="back-link" href="index.html#trabajo">← Back to work</a>
     <h1>${esc(p.t)}</h1>
     <ul class="meta"><li>${CATS[p.c]}</li><li>${p.y}</li><li>${esc(p.tools)}</li></ul>
     <p class="lead">${esc(p.intro||p.d)}</p>
