@@ -1,11 +1,11 @@
 :root{
   --bg:#051a05; --paper:#fdf2f6; --orange:#d2581f; --teal:#12ad8a; --navy:#0e0550; --ink:#050505; --red:#ff2d55;
   /* IMÁGENES: cambia aquí las rutas para sustituir cartas y fondo en toda la web */
-  --img-frame:url(assets/proyectos/frame.png);   /* cara delantera de las cartas */
-  --img-back:url(assets/proyectos/back.png);     /* reverso de las cartas */
-  --img-wizards:url(assets/proyectos/wizards.png);
-  --img-cover:url(assets/proyectos/cover.png);
-  --img-bg:url(assets/proyectos/back.png);       /* fondo de toda la web */
+  --img-frame:url(assets/frame.png);   /* cara delantera de las cartas */
+  --img-back:url(assets/back.png);     /* reverso de las cartas */
+  --img-wizards:url(assets/wizards.png);
+  --img-cover:url(assets/cover.png);
+  --img-bg:url(assets/back.png);       /* fondo de toda la web */
   --bg-size:420px; --bg-opacity:.16;   /* tamaño del dibujo de fondo y su intensidad (0 a 1) */
   /* CÍRCULO de las cartas: posición y tamaño de la imagen redonda (en % de la carta) */
   --art-left:9.9%; --art-top:14.2%; --art-w:78.5%; --art-h:55.5%;
@@ -44,14 +44,14 @@ nav a:hover{color:var(--teal)}
 .cover:hover{transform:rotate(-1deg) scale(1.03)}
 
 section{padding:60px 0}
-.sec-title{font-size:clamp(2.2rem,6vw,4rem);margin-bottom:10px;display:inline-block;background:var(--paper);color:var(--ink);padding:6px 16px;border-left:12px solid var(--orange)}
+.sec-title{font-size:clamp(2.2rem,6vw,4rem);margin-bottom:10px;display:block;color:var(--paper);text-shadow:4px 4px 0 var(--navy),7px 7px 0 var(--teal)}
 .sec-sub{margin:10px 0 28px;max-width:40em;opacity:.85}
 
 /* wizards */
 .wiz{width:100%;aspect-ratio:874/827;background:var(--img-wizards) no-repeat;background-size:200% 300%}
 .w-cfx{background-position:0 0}.w-fx{background-position:100% 0}.w-3d{background-position:0 50%}.w-diseno{background-position:100% 50%}
 .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px}
-.skill{background:var(--paper);color:var(--ink);padding:16px;text-align:center;border:4px solid var(--orange);border-radius:6px;transition:transform .2s}
+.skill{background:var(--ink);color:var(--paper);padding:16px;text-align:center;border:4px solid var(--orange);border-radius:6px;transition:transform .2s}
 .skill:nth-child(2){border-color:var(--navy)}.skill:nth-child(3){border-color:var(--teal)}.skill:nth-child(4){border-color:var(--ink)}
 .skill:hover{transform:translateY(-6px) rotate(-1deg)}
 .skill .wiz{width:60%;margin:0 auto 6px}
@@ -79,12 +79,12 @@ section{padding:60px 0}
 .art{position:absolute;left:var(--art-left);top:var(--art-top);width:var(--art-w);height:var(--art-h);border-radius:50%;overflow:hidden;display:grid;place-items:center;background:#051a05 center/cover}
 .plate{width:92%;aspect-ratio:1;border-radius:50%;background:var(--paper);display:grid;place-items:center}
 .plate .wiz{width:86%}
-.label{position:absolute;left:4%;top:78.2%;width:92%;height:19.5%;color:var(--ink);padding:2.2cqw 3cqw;display:flex;flex-direction:column;justify-content:center;gap:1cqw}
+.label{position:absolute;left:4%;top:78.2%;width:92%;height:19.5%;color:var(--ink);padding:2.2cqw 3cqw;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:1cqw}
 .label h3{font-size:6.8cqw;line-height:1.05}
 .label span{font-weight:600;font-size:4.2cqw;text-transform:uppercase;letter-spacing:.08em}
 .label .c-cfx{color:#111}.label .c-fx{color:var(--navy)}.label .c-3d{color:var(--orange)}.label .c-diseno{color:var(--teal)}.label .c-juegos{color:var(--red)}
-.hint{position:absolute;right:5%;top:4%;width:13cqw;height:13cqw;padding:1.3cqw;border-radius:50%;background:var(--paper);color:var(--ink);display:grid;place-items:center;opacity:.95}
-.hint svg{width:100%;height:100%;display:block}
+.hint{position:absolute;left:50%;top:2.5%;width:13cqw;height:13cqw;transform:translateX(-50%);filter:drop-shadow(0 .6cqw 1cqw rgba(0,0,0,.7))}
+.hint img{width:100%;height:100%;object-fit:contain;display:block}
 .detail{position:absolute;left:23%;right:23%;top:31%;bottom:31%;display:flex;flex-direction:column;justify-content:center;gap:5cqw;text-align:center;font-size:5cqw;line-height:1.4}
 .detail a{align-self:center;background:var(--paper);color:var(--ink);padding:2.2cqw 6cqw;font:7.5cqw var(--title);letter-spacing:.05em;text-decoration:none;text-transform:uppercase;border:.8cqw solid var(--orange);box-shadow:1.2cqw 1.2cqw 0 var(--teal)}
 
@@ -154,7 +154,7 @@ nav b a:hover{color:var(--orange)}
 
 /* especialidades: imagen a toda la pestaña, con opacidad baja, y contenido alineado */
 .skill{position:relative;display:flex;flex-direction:column;justify-content:flex-end;min-height:340px;overflow:hidden}
-.skill .wiz{position:absolute;top:0;left:50%;height:100%;width:auto;aspect-ratio:874/827;margin:0;opacity:.25;pointer-events:none;transform:translateX(-61%)}
+.skill .wiz{position:absolute;top:0;left:50%;height:100%;width:auto;aspect-ratio:874/827;margin:0;opacity:.4;pointer-events:none;transform:translateX(-61%)}
 .skill .wiz.w-fx,.skill .wiz.w-diseno{transform:translateX(-40%)}
 .skill .wiz.w-juegos{left:0;width:100%;height:100%;aspect-ratio:auto;opacity:.3;transform:none;background:var(--img-cover) center/cover no-repeat}
 .skill>*:not(.wiz){position:relative;z-index:1}
@@ -164,3 +164,9 @@ nav b a:hover{color:var(--orange)}
 
 /* ajustes para Germania One (más ancha que Anton) */
 .skill h3{font-size:1.25rem}
+
+/* pestañas de especialidades sobre negro */
+.skill:nth-child(2){border-color:var(--teal)}.skill:nth-child(3){border-color:var(--orange)}.skill:nth-child(4){border-color:var(--teal)}
+.skill .wiz.w-cfx,.skill .wiz.w-fx{filter:invert(1)}
+.skill .go{background:var(--paper);color:var(--ink)}
+.skill:hover .go{background:var(--orange);color:var(--paper)}
