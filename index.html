@@ -69,13 +69,16 @@
 <script>
 const cats=p=>[].concat(p.c), first=p=>cats(p)[0]; // c puede ser "cfx" o ["cfx","fx"]
 const catNames=p=>cats(p).map(k=>CATS[k]).join(' · ');
+// Marcos de las cartas (se reparten por orden) y su color de acento
+const FRAMES=['assets/cartas/frente-1.webp','assets/cartas/frente-2.webp','assets/cartas/frente-3.webp','assets/cartas/frente-4.webp','assets/cartas/frente-5.webp','assets/cartas/frente-6.webp'];
+const ACCENTS=['#d65846','#229eb2','#1cb35c','#a37e09','#557aef','#769600'];
 const grid=document.getElementById('grid'),fl=document.getElementById('filters');
-grid.innerHTML=P.map(p=>{
+grid.innerHTML=P.map((p,i)=>{
   const art=p.img?`<div class="art" style="background-image:url('${esc(p.img)}')"></div>`
     :`<div class="art"><div class="plate"><div class="wiz w-${first(p)==='juegos'?'cfx':first(p)}"></div></div></div>`;
   return `<div class="card" data-c="${cats(p).join(' ')}" role="button" tabindex="0" aria-label="${esc(p.t)}: flip card">
     <div class="inner">
-      <div class="face front"${p.frame?` style="background-image:url('${esc(p.frame)}')"`:''}>${art}<div class="hint"><img src="assets/giro.png" alt=""></div>
+      <div class="face front" style="background-image:url('${esc(p.frame||FRAMES[i%FRAMES.length])}');--accent:${ACCENTS[i%ACCENTS.length]}">${art}<div class="hint"><img src="assets/giro.png" alt=""></div>
         <div class="label"><h3>${esc(p.t)}</h3><span class="c-${first(p)}">${catNames(p)} · ${p.y}</span></div></div>
       <div class="face back"${p.back?` style="background-image:url('${esc(p.back)}')"`:''}><div class="detail"><p>${esc(p.d)}</p><a href="proyecto.html?id=${encodeURIComponent(p.id)}">See more</a></div></div>
     </div></div>`;
