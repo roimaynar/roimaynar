@@ -1,15 +1,15 @@
 :root{
   --bg:#051a05; --paper:#fdf2f6; --orange:#d2581f; --teal:#12ad8a; --navy:#0e0550; --ink:#050505; --red:#ff2d55;
   /* IMÁGENES: cambia aquí las rutas para sustituir cartas y fondo en toda la web */
-  --img-frame:url(assets/frame.png);   /* cara delantera de las cartas */
-  --img-back:url(assets/back.png);     /* reverso de las cartas */
-  --img-wizards:url(assets/wizards.png);
-  --img-cover:url(assets/cover.png);
-  --img-bg:url(assets/back.png);       /* fondo de toda la web */
+  --img-frame:url(assets/proyectos/frame.png);   /* cara delantera de las cartas */
+  --img-back:url(assets/proyectos/back.png);     /* reverso de las cartas */
+  --img-wizards:url(assets/proyectos/wizards.png);
+  --img-cover:url(assets/proyectos/cover.png);
+  --img-bg:url(assets/proyectos/back.png);       /* fondo de toda la web */
   --bg-size:420px; --bg-opacity:.16;   /* tamaño del dibujo de fondo y su intensidad (0 a 1) */
   /* CÍRCULO de las cartas: posición y tamaño de la imagen redonda (en % de la carta) */
   --art-left:9.9%; --art-top:14.2%; --art-w:78.5%; --art-h:55.5%;
-  --title:'Anton','Impact',sans-serif; --body:'Work Sans',system-ui,sans-serif;
+  --title:'Germania One','Georgia',serif; --body:'Lusitana','Georgia',serif;
 }
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth}
@@ -80,7 +80,7 @@ section{padding:60px 0}
 .plate{width:92%;aspect-ratio:1;border-radius:50%;background:var(--paper);display:grid;place-items:center}
 .plate .wiz{width:86%}
 .label{position:absolute;left:4%;top:78.2%;width:92%;height:19.5%;color:var(--ink);padding:2.2cqw 3cqw;display:flex;flex-direction:column;justify-content:center;gap:1cqw}
-.label h3{font-size:8.2cqw;line-height:1}
+.label h3{font-size:6.8cqw;line-height:1.05}
 .label span{font-weight:600;font-size:4.2cqw;text-transform:uppercase;letter-spacing:.08em}
 .label .c-cfx{color:#111}.label .c-fx{color:var(--navy)}.label .c-3d{color:var(--orange)}.label .c-diseno{color:var(--teal)}.label .c-juegos{color:var(--red)}
 .hint{position:absolute;right:5%;top:4%;width:13cqw;height:13cqw;padding:1.3cqw;border-radius:50%;background:var(--paper);color:var(--ink);display:grid;place-items:center;opacity:.95}
@@ -161,3 +161,6 @@ nav b a:hover{color:var(--orange)}
 .skill h3{min-height:1.1em}
 .skill p{min-height:4.3em;margin-top:8px}
 .skill .go{align-self:center}
+
+/* ajustes para Germania One (más ancha que Anton) */
+.skill h3{font-size:1.25rem}
