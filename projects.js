@@ -21,7 +21,7 @@ const P=[
   d:"Pelo largo con guías, clumping y viento.",tools:"Houdini · Karma",img:"",
   intro:"Un groom completo, desde las guías hasta el render final.",
   text:["Aquí explica de qué va el proyecto: el encargo, el diseño del personaje y qué tenía de especial el pelo.","Cuenta tu proceso: guías, clumping, ruido, simulación con viento y cómo lo integraste en el pipeline."],
-  gallery:[],vimeo:"vimeo.com/1241983054"},
+  gallery:[],vimeo:"1241983054"},
  {id:"capa-movimiento",t:"Capa en movimiento",c:"cfx",y:2025,
   d:"Simulación de ropa con arrugas y colisiones.",tools:"Houdini Vellum",img:"",
   intro:"Tela que se comporta como tela, plano tras plano.",
