@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Roi Maynar · CFX, FX, 3D animation</title>
+<meta name="description" content="Portfolio de Roi Maynar: CFX, FX, 3D animation y graphic design.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav><div class="wrap">
+  <b><a href="#contacto">ROI MAYNAR</a></b>
+  <ul>
+    <li><a href="#especialidades">Especialidades</a></li>
+    <li><a href="#trabajo">Trabajo</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+</div></nav>
+
+<section class="intro" aria-label="Presentación y vídeo">
+  <iframe src="https://player.vimeo.com/video/1241983054?autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Demo reel"></iframe>
+  <div class="intro-text"><div class="wrap"><div class="intro-box">
+    <h1>Roi<br>Maynar</h1>
+    <ul class="roles"><li>CFX</li><li>FX</li><li>3D animation</li><li>Graphic design</li></ul>
+    <p>I have always been passionate about movement and visual storytelling. I specialize in 3D animation, VFX, and CFX, with a strong interest in node-based workflows, particularly in Houdini, Blender, and Nuke.</p>
+    <a class="btn" href="#trabajo">Ver trabajo</a><a class="btn" href="#contacto">Contacto</a>
+  </div></div></div>
+  <a class="btn skip" href="#especialidades">Entrar ↓</a>
+</section>
+
+<section id="especialidades"><div class="wrap">
+  <h2 class="sec-title">Especialidades</h2>
+  <p class="sec-sub">Cinco oficios. Pulsa uno para ver el reel o el portfolio.</p>
+  <div class="skills">
+    <a class="skill" data-k="cfx" target="_blank" rel="noopener"><div class="wiz w-cfx"></div><h3>CFX</h3><p>Groom de pelo y simulación de ropa para personajes.</p><span class="go">Ver reel →</span></a>
+    <a class="skill" data-k="fx" target="_blank" rel="noopener"><div class="wiz w-fx"></div><h3>FX</h3><p>Fuego, agua, humo, destrucción y magia.</p><span class="go">Ver reel →</span></a>
+    <a class="skill" data-k="3d" target="_blank" rel="noopener"><div class="wiz w-3d"></div><h3>Animación 3D</h3><p>Personajes, actuación y puesta en escena.</p><span class="go">Ver reel →</span></a>
+    <a class="skill" data-k="diseno" target="_blank" rel="noopener"><div class="wiz w-diseno"></div><h3>Diseño gráfico</h3><p>Ilustración, tipografía, cartas y maquetación.</p><span class="go">Ver portfolio →</span></a>
+    <a class="skill" data-k="juegos" target="_blank" rel="noopener"><div class="wiz w-juegos"></div><h3>Juegos de mesa</h3><p>Mecánicas, ilustración, cartas y manuales.</p><span class="go">Ver portfolio →</span></a>
+  </div>
+</div></section>
+
+<section id="trabajo"><div class="wrap">
+  <h2 class="sec-title">Trabajo</h2>
+  <p class="sec-sub">Toca una carta para darle la vuelta y pulsa «Ver más» para entrar en el proyecto.</p>
+  <div class="filters" id="filters" role="group" aria-label="Filtrar por categoría"></div>
+  <div class="grid" id="grid"></div>
+</div></section>
+
+<section id="contacto"><div class="wrap contact">
+  <h2 class="sec-title">Contacto</h2>
+  <p class="sec-sub" style="margin-inline:auto">¿Tienes un proyecto? Escríbeme.</p>
+  <div class="links">
+    <!-- EDITA AQUÍ: tus enlaces -->
+    <a class="btn" href="mailto:tu@email.com">Email</a>
+    <a class="btn" href="https://www.linkedin.com/in/tuusuario">LinkedIn</a>
+    <a class="btn" href="https://vimeo.com/1241983054">Demo reel</a>
+    <a class="btn" href="https://www.instagram.com/tuusuario">Instagram</a>
+  </div>
+</div></section>
+
+<footer><div class="wrap">© <span id="yr"></span> Roi Maynar</div></footer>
+
+<script src="projects.js"></script>
+<script>
+const grid=document.getElementById('grid'),fl=document.getElementById('filters');
+grid.innerHTML=P.map(p=>{
+  const art=p.img?`<div class="art" style="background-image:url('${esc(p.img)}')"></div>`
+    :`<div class="art"><div class="plate"><div class="wiz w-${p.c==='juegos'?'cfx':p.c}"></div></div></div>`;
+  return `<div class="card" data-c="${p.c}" role="button" tabindex="0" aria-label="${esc(p.t)}: girar carta">
+    <div class="inner">
+      <div class="face front"${p.frame?` style="background-image:url('${esc(p.frame)}')"`:''}>${art}<div class="hint">↻</div>
+        <div class="label"><h3>${esc(p.t)}</h3><span class="c-${p.c}">${CATS[p.c]} · ${p.y}</span></div></div>
+      <div class="face back"${p.back?` style="background-image:url('${esc(p.back)}')"`:''}><div class="detail"><h3>${esc(p.t)}</h3><p>${esc(p.d)}</p><small>${esc(p.tools)}</small>
+        <a href="proyecto.html?id=${encodeURIComponent(p.id)}">Ver más</a></div></div>
+    </div></div>`;
+}).join('');
+grid.addEventListener('click',e=>{if(e.target.closest('a'))return;const c=e.target.closest('.card');if(c)c.classList.toggle('flip')});
+grid.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.classList.contains('card')){e.preventDefault();e.target.classList.toggle('flip')}});
+const used=['todo',...new Set(P.map(p=>p.c))];
+fl.innerHTML=used.map(k=>`<button class="chip" data-k="${k}" aria-pressed="${k==='todo'}">${k==='todo'?'Todo':CATS[k]}</button>`).join('');
+fl.addEventListener('click',e=>{
+  const b=e.target.closest('.chip');if(!b)return;
+  fl.querySelectorAll('.chip').forEach(x=>x.setAttribute('aria-pressed',x===b));
+  grid.querySelectorAll('.card').forEach(c=>c.classList.toggle('hide',b.dataset.k!=='todo'&&c.dataset.c!==b.dataset.k));
+});
+document.querySelectorAll('.skill[data-k]').forEach(a=>{a.href=LINKS[a.dataset.k]||'#'});
+document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
