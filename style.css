@@ -7,6 +7,8 @@
   --img-cover:url(assets/proyectos/cover.png);
   --img-bg:url(assets/proyectos/back.png);       /* fondo de toda la web */
   --bg-size:420px; --bg-opacity:.16;   /* tamaño del dibujo de fondo y su intensidad (0 a 1) */
+  /* CÍRCULO de las cartas: posición y tamaño de la imagen redonda (en % de la carta) */
+  --art-left:9.9%; --art-top:14.2%; --art-w:78.5%; --art-h:55.5%;
   --title:'Anton','Impact',sans-serif; --body:'Work Sans',system-ui,sans-serif;
 }
 *{box-sizing:border-box;margin:0}
@@ -74,8 +76,8 @@ section{padding:60px 0}
 .face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;background-size:100% 100%;border-radius:3%;box-shadow:0 12px 30px rgba(0,0,0,.55)}
 .front{background-image:var(--img-frame)}
 .back{background-image:var(--img-back);transform:rotateY(180deg)}
-.art{position:absolute;left:11%;top:16%;width:78%;height:54.5%;border-radius:50%;overflow:hidden;display:grid;place-items:center;background:#051a05 center/cover}
-.plate{width:74%;aspect-ratio:1;border-radius:50%;background:var(--paper);display:grid;place-items:center}
+.art{position:absolute;left:var(--art-left);top:var(--art-top);width:var(--art-w);height:var(--art-h);border-radius:50%;overflow:hidden;display:grid;place-items:center;background:#051a05 center/cover}
+.plate{width:92%;aspect-ratio:1;border-radius:50%;background:var(--paper);display:grid;place-items:center}
 .plate .wiz{width:86%}
 .label{position:absolute;left:4%;top:78.2%;width:92%;height:19.5%;color:var(--ink);padding:2.2cqw 3cqw;display:flex;flex-direction:column;justify-content:center;gap:1cqw}
 .label h3{font-size:8.2cqw;line-height:1}
