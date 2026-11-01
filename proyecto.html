@@ -25,6 +25,7 @@
 
 <script src="projects.js"></script>
 <script>
+const cats=p=>[].concat(p.c), first=p=>cats(p)[0]; // c puede ser "cfx" o ["cfx","fx"]
 const id=new URLSearchParams(location.search).get('id');
 const i=P.findIndex(p=>p.id===id), p=P[i], root=document.getElementById('proj');
 document.getElementById('yr').textContent=new Date().getFullYear();
@@ -35,11 +36,11 @@ if(!p){
   const prev=P[(i-1+P.length)%P.length], next=P[(i+1)%P.length];
   const gal=p.gallery&&p.gallery.length
     ? p.gallery.map(g=>`<figure><img src="${esc(g.src)}" alt="${esc(g.cap||p.t)}" loading="lazy">${g.cap?`<figcaption>${esc(g.cap)}</figcaption>`:''}</figure>`).join('')
-    : [1,2].map(()=>`<figure><div class="ph"><div class="plate"><div class="wiz w-${p.c==='juegos'?'cfx':p.c}"></div></div></div><figcaption>Add your images here (gallery field in projects.js)</figcaption></figure>`).join('');
+    : [1,2].map(()=>`<figure><div class="ph"><div class="plate"><div class="wiz w-${first(p)==='juegos'?'cfx':first(p)}"></div></div></div><figcaption>Add your images here (gallery field in projects.js)</figcaption></figure>`).join('');
   root.innerHTML=`
     <a class="back-link" href="index.html#trabajo">← Back to work</a>
     <h1>${esc(p.t)}</h1>
-    <ul class="meta"><li>${CATS[p.c]}</li><li>${p.y}</li><li>${esc(p.tools)}</li></ul>
+    <ul class="meta">${cats(p).map(k=>`<li>${CATS[k]}</li>`).join('')}<li>${p.y}</li><li>${esc(p.tools)}</li></ul>
     <p class="lead">${esc(p.intro||p.d)}</p>
     ${p.vimeo?`<div class="proj-video"><iframe src="https://player.vimeo.com/video/${esc(p.vimeo)}?title=0&byline=0&portrait=0" allow="fullscreen; picture-in-picture" allowfullscreen title="${esc(p.t)}"></iframe></div>`:''}
     <div class="proj-text">${(p.text||[]).map(t=>`<p>${esc(t)}</p>`).join('')}</div>
