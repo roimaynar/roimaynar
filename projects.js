@@ -30,7 +30,7 @@ const LINKS={
 const CATS={cfx:"CFX",fx:"FX","3d":"3D Animation",diseno:"Graphic design",juegos:"Board games"};
 
 const P=[
- {id:"groom-criatura",t:"No Life Shortfilm",c:"cfx",y:2026,
+ {id:"groom-criatura",t:"No Life Shortfilm",c:["cfx","fx"],y:2026,
   d:"Long hair with guides, clumping and wind.",tools:"Houdini · Karma",img:"",
   intro:"A complete groom, from guides to the final render.",
   text:["Explain here what the project is about: the brief, the character design and what made the hair special.","Describe your process: guides, clumping, noise, wind simulation and how you integrated it into the pipeline."],
