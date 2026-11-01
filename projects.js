@@ -23,7 +23,7 @@ const P=[
   text:["Aquí explica de qué va el proyecto: el encargo, el diseño del personaje y qué tenía de especial el pelo.","Cuenta tu proceso: guías, clumping, ruido, simulación con viento y cómo lo integraste en el pipeline."],
   gallery:[],vimeo:"1241983054"},
  {id:"capa-movimiento",t:"Capa en movimiento",c:"cfx",y:2025,
-  d:"Simulación de ropa con arrugas y colisiones.",tools:"Houdini Vellum",img:"",
+  d:"Simulación de ropa con arrugas y colisiones.",tools:"Houdini Vellum",img:"assets/proyectos/cover.png",
   intro:"Tela que se comporta como tela, plano tras plano.",
   text:["Describe el plano, el personaje y el reto de la simulación.","Explica los ajustes de Vellum, las colisiones y cómo controlaste las arrugas."],
   gallery:[{src:"assets/proyectos/cover.png", cap:"Pie de foto"}],vimeo:""},
