@@ -26,6 +26,13 @@
 <script src="projects.js"></script>
 <script>
 const cats=p=>[].concat(p.c), first=p=>cats(p)[0]; // c puede ser "cfx" o ["cfx","fx"]
+function videoSrc(p){ // acepta id o enlace completo de YouTube (campo youtube) o de Vimeo (campo vimeo)
+  const yt=p.youtube&&String(p.youtube).match(/(?:v=|youtu\.be\/|embed\/|shorts\/|^)([\w-]{11})(?:[?&#\/]|$)/);
+  if(yt)return 'https://www.youtube-nocookie.com/embed/'+yt[1];
+  const vm=p.vimeo&&String(p.vimeo).match(/(\d{6,})/);
+  if(vm)return 'https://player.vimeo.com/video/'+vm[1]+'?title=0&byline=0&portrait=0';
+  return '';
+}
 const id=new URLSearchParams(location.search).get('id');
 const i=P.findIndex(p=>p.id===id), p=P[i], root=document.getElementById('proj');
 document.getElementById('yr').textContent=new Date().getFullYear();
@@ -42,7 +49,7 @@ if(!p){
     <h1>${esc(p.t)}</h1>
     <ul class="meta">${cats(p).map(k=>`<li>${CATS[k]}</li>`).join('')}<li>${p.y}</li><li>${esc(p.tools)}</li></ul>
     <p class="lead">${esc(p.intro||p.d)}</p>
-    ${p.vimeo?`<div class="proj-video"><iframe src="https://player.vimeo.com/video/${esc(p.vimeo)}?title=0&byline=0&portrait=0" allow="fullscreen; picture-in-picture" allowfullscreen title="${esc(p.t)}"></iframe></div>`:''}
+    ${videoSrc(p)?`<div class="proj-video"><iframe src="${esc(videoSrc(p))}" allow="fullscreen; picture-in-picture; encrypted-media" allowfullscreen title="${esc(p.t)}"></iframe></div>`:''}
     <div class="proj-text">${(p.text||[]).map(t=>`<p>${esc(t)}</p>`).join('')}</div>
     <div class="gallery">${gal}</div>
     <div class="pager">
