@@ -170,3 +170,19 @@ nav b a:hover{color:var(--orange)}
 .skill .wiz.w-cfx,.skill .wiz.w-fx{filter:invert(1)}
 .skill .go{background:var(--paper);color:var(--ink)}
 .skill:hover .go{background:var(--orange);color:var(--paper)}
+
+/* IMÁGENES de fondo de cada pestaña de Fields (Board games se queda como está).
+   Cambia aquí la ruta de cualquiera para sustituirla. */
+:root{
+  --img-field-cfx:url(assets/proyectos/Cfx_fields.webp);
+  --img-field-fx:url(assets/proyectos/Fx_fields.webp);
+  --img-field-3d:url(assets/proyectos/Anim_fields.webp);
+  --img-field-diseno:url(assets/proyectos/Diseno_fields.webp);
+}
+.skill .wiz.w-cfx,.skill .wiz.w-fx,.skill .wiz.w-3d,.skill .wiz.w-diseno{
+  left:0;width:100%;height:100%;aspect-ratio:auto;transform:none;filter:none;
+  background-size:cover;background-position:center;background-repeat:no-repeat}
+.skill .wiz.w-cfx{background-image:var(--img-field-cfx)}
+.skill .wiz.w-fx{background-image:var(--img-field-fx)}
+.skill .wiz.w-3d{background-image:var(--img-field-3d)}
+.skill .wiz.w-diseno{background-image:var(--img-field-diseno)}
