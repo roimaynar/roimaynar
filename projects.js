@@ -31,7 +31,7 @@ const CATS={cfx:"CFX",fx:"FX","3d":"3D Animation",diseno:"Graphic design",juegos
 
 const P=[
  {id:"groom-criatura",t:"No Life Shortfilm",c:["cfx","fx"],y:2026,
-  d:"Cfx, fx and Script lead. 3D Animator and compositer.",tools:"Houdini · Karma",img:"NoLife_portada",
+  d:"Cfx, fx and Script lead. 3D Animator and compositer.",tools:"Houdini · Karma",img:"",
   intro:"Cfx, fx and Script lead. Also 3D Animator, storyboard and layout artist, and comp artist.",
   text:["Explain here what the project is about: the brief, the character design and what made the hair special.","Describe your process: guides, clumping, noise, wind simulation and how you integrated it into the pipeline."],
   gallery:[],vimeo:""},
