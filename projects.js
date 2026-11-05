@@ -49,7 +49,7 @@ const P=[
   d:"Shortfilm and playing cards game.",tools:"Blender",img:"assets/proyectos/Magos_portada.webp",
   intro:"Los Magos Siempre Hacen Trampas. A hibrid porject that combines de the creation of a card game and a 3D animated shorfilm based in the game.",
   text:["Describe the shot and the scale of the effect.","Explain the workflow: base ocean, FLIP, foam, spray and compositing in Nuke."],
-  gallery:[],vimeo:""},
+  gallery:[],vimeo:"", youtube:"https://youtu.be/l8CeYuh5VD8?si=xgapCvGtzGleACG_"},
  {id:"ciclo-caminar",t:"Los Titanes de la Tamarita",c:["juegos","diseno"],y:2023,
   d:"Board game",tools:"Indesign · Blender · Pixel Studio",img:"assets/proyectos/Tamarita_portada.webp",
   intro:"Family oriented board game about a group of tiny adventurers in a fantasy world park full of titans.",
