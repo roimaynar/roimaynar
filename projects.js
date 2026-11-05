@@ -22,8 +22,8 @@ const LINKS={
   cfx:"https://vimeo.com/1241983054",      // reel de CFX
   fx:"https://vimeo.com/1241983054",       // reel de FX
   "3d":"https://vimeo.com/1241983054",     // reel de animación 3D
-  diseno:"https://www.behance.net/tuusuario",        // portfolio de diseño gráfico
-  juegos:"https://www.behance.net/tuusuario/juegos"  // portfolio de juegos de mesa
+  diseno:"assets/RoiMaynar_Portfolio.pdf",   // portfolio de diseño gráfico (PDF dentro de la web)
+  juegos:"assets/RoiMaynar_Portfolio.pdf"    // portfolio de juegos de mesa (mismo PDF)
 };
 /*
    ============================================================ */
