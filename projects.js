@@ -39,7 +39,7 @@ const P=[
   d:"Illustrated infographics abou climate change.",tools:"Indesign · Procreate",img:"assets/proyectos/Climate_portada.webp",
   intro:"Developement of 4 illustrated infographics for the Climate Communications Resource Hub",
   text:["All the infographics can be seen in the Small World Stories web"],
-  gallery:[{src:"assets/proyectos/Diseno_fields.webp", cap:"Image of a infographic"],vimeo:""},
+  gallery:[{src:"assets/proyectos/Diseno_fields.webp", cap:"Image of a infographic"}],vimeo:""},
  {id:"hechizo-fuego",t:"Stigma Shortfilm",c:"3d",y:2026,
   d:"3D animator for the Award Winning shortfilm",tools:"Autodesk Maya",img:"assets/proyectos/Stigma_portada.webp",
   intro:"Three different scenes from the shortfilm. Only 2 can be of public access at the moment",
