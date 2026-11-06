@@ -59,7 +59,7 @@ const P=[
   d:"Music band poster.",tools:"Houdini · Blender · Indesign",img:"assets/proyectos/Sempronio_portada.webp",
   intro:"A poster for the galician music band Sexteto Sempronio",
   text:["I used houdini to create a destruction of 3 greek temples and blender to compose all the 3D scene. It was used in the may 2026 concert in Nigrán, Galicia, Spain"],
-  gallery:[],vimeo:""},
+  gallery:[{src:"assets/proyectos/interior_sempronio_01.webp", cap:"Imagen del local"}, {src:"assets/proyectos/interior_sempronio_02.webp", cap:"Cartel"}],vimeo:""},
 ];
 
 const esc=s=>String(s).replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
